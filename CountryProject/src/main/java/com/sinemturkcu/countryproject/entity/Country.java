@@ -5,7 +5,7 @@ import lombok.Data;
 
 @Entity
 @Table(name = "country")
-@Data
+
 public class Country {
     @SequenceGenerator(
             name = "generator",
@@ -24,4 +24,37 @@ public class Country {
 
     @Column(name = "president_name")
     private String president;
+
+    public Country() {
+    }
+
+    public Country(Long id, String name, String president) {
+        this.id = id;
+        this.name = name;
+        this.president = president;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getPresident() {
+        return president;
+    }
+
+    public void setPresident(String president) {
+        this.president = president;
+    }
 }
